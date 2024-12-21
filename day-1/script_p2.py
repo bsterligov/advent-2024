@@ -5,7 +5,7 @@ right = []
 
 for line in data.read().split("\n"):
     line = list(filter(None, line.split(" ")))
-    if (len(line) == 0):
+    if len(line) == 0:
         continue
     left.append(line[0])
     right.append(line[1])
