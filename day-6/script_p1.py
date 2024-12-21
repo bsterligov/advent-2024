@@ -21,7 +21,7 @@ for line in data:
 i, j = si, sj
 di, dj = -1, 0
 count = 1
-visited = []
+visited = set()
 while i + di < len(matrix) and i + di >= 0 and j + dj < len(matrix[0]) and j + dj >= 0:
     if matrix[i + di][j + dj] == 1:
         if (di, dj) == (-1, 0):
@@ -33,7 +33,7 @@ while i + di < len(matrix) and i + di >= 0 and j + dj < len(matrix[0]) and j + d
         elif (di, dj) == (0, -1):
             (di, dj) = (-1, 0)
     if (i, j) not in visited:
-        visited.append((i, j))
+        visited |= {(i, j)}
         count += 1
     i += di
     j += dj
